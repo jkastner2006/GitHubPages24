@@ -1,158 +1,225 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="de">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>reveal.js - Markdown Example</title>
+	<title>reveal.js</title>
 
-	<link rel="stylesheet" href="../dist/reveal.css">
-	<link rel="stylesheet" href="../dist/theme/white.css" id="theme">
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+	<link rel="stylesheet" href="css/main-style.css">
 
-	<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
 </head>
-
 <body>
-
 <div class="reveal">
-
 	<div class="slides">
-
-		<!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
-		<section data-markdown="markdown.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
-
-		<!-- Slides are separated by three dashes (the default) -->
-		<section data-markdown>
-			<script type="text/template">
-				## Demo 1
-				Slide 1
-				---
-				## Demo 1
-				Slide 2
-				---
-				## Demo 1
-				Slide 3
-			</script>
+		<section>
+			<h5>Informationstechnische Projekte im 3. & 4. Jahrgang</h5>
+			<img src="./media/htlLogo.png" alt="HTL-Steyr-Logo" width="300">
 		</section>
 
-		<!-- Slides are separated by regexp matching newline + three dashes + newline, vertical slides identical but two dashes -->
-		<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
-			<script type="text/template">
-				## Demo 2
-				Slide 1.1
-
-				--
-
-				## Demo 2
-				Slide 1.2
-
-				---
-
-				## Demo 2
-				Slide 2
-			</script>
+		<section>
+			<h5>Projekte: Übersicht</h5>
+			<ul class="list">
+				<li>Taschenrechner</li>
+				<li>Schere-Stein-Papier</li>
+				<li>Minesweeper</li>
+				<li>Tetris</li>
+				<li>Quiz-App</li>
+				<li>Snake</li>
+			</ul>
 		</section>
 
-		<!-- No "extra" slides, since the separator can't be matched ("---" will become horizontal rulers) -->
-		<section data-markdown data-separator="$x">
-			<script type="text/template">
-				A
+		<section>
+			<h5>Technologien: Übersicht</h5>
+			<ul class="list">
+				<li>Version-Control: Git, GitHub</li>
+				<li>Programming-Language: Java</li>
+				<li>Styles: CSS</li>
+				<li>Projekt Management: zuerst Klassisch, dann Agil (Scrum)</li>
 
-				---
-
-				B
-
-				---
-
-				C
-			</script>
+			</ul>
 		</section>
 
-		<!-- Slide attributes -->
-		<section data-markdown>
-			<script type="text/template">
-				<!-- .slide: data-background="#000000" -->
-				## Slide attributes
-			</script>
+		<section>
+			<section>
+				<h6>Taschenrechner</h6>
+				<img src="./media/taschenrechner.png" alt="Taschenrechner" width="400">
+			</section>
+
+			<section>
+
+				<h5>Projektbeschreibung: </h5>
+				<p>Ziel des Projekts war es, einen Taschenrechner in Java-FX zu programmieren und diesen dann durch eine ausführbare .jar-Datei verwenden zu können. </p>
+				<p>Der Taschenrechner wurde noch <span class="bold">ohne</span> einer Projektmanagement-Methode oder der Verwendung von Git/GitHub umgesetzt.</p>
+				<p>Weiters war dieses Projekt ein Einzelprojekt.</p>
+				<p>Projektlaufzeit: ungefähr 1 Monat</p>
+
+
+			</section>
+
+
 		</section>
 
-		<!-- Element attributes -->
-		<section data-markdown>
-			<script type="text/template">
-				## Element attributes
-				- Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
-				- Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
-			</script>
+		<section>
+			<section>
+				<h6>Schere-Stein-Papier</h6>
+
+				<div>
+					<img src="media/SchereSteinPapier1.png" alt="SchereSteinPapier1" class="imagesSchereSteinPapier" id="imageSchereSteinPapier1">
+					<img src="media/SchereSteinPapier2.png" alt="SchereSteinPapier2" class="imagesSchereSteinPapier" id="imageSchereSteinPapier2">
+					<img src="media/SchereSteinPapier3.png" alt="SchereSteinPapier3" class="imagesSchereSteinPapier" id="imageSchereSteinPapier3">
+				</div>
+
+			</section>
+			<section>
+				<h5>Projektbeschreibung: </h5>
+				<p>Wirds das Programm ausgeführt sind in der oberen Hälfte des geöffneten Fensters 3 Symbole plaziert.
+					(Symbole für Schere, Stein und Papier)
+					<br>
+					Sie entscheiden sich für ein Symbol und klicken darauf.
+					<br>(Das Symbol ist eigentlich ein Button, der mittels CSS ein <code>-fx-background-image</code> bekommen hat.)
+					<br>
+					<br>
+					Dieses Spiel wurde nicht im Mehrspieler Konzept entworfen, deshalb spielen Sie gegen den Computer.
+					<br>Während Sie also auf die Entscheidung des Computers warten, lädt eine Progress-Bar, um den Wartevorgang zu überbrücken.
+
+					<br>Im unteren Bereich des Fensters sehen Sie nun das Ergebnis.
+					<br>Mittels 2 Image-Views wird jeweils das gewählte Symbol des Gewinners und des Verlierers dargestellt.
+					<br>Unterhalb der Symbole wird geschrieben, wer das Symbol gewählt hat.
+					In der Mitte, also zwischen den Symbolen, steht das Wort schlägt, d.h. das stärkere Symbol (der Gewinner) steht immer auf der linken Seite.
+					<br>Natürlich gibt es auch einen Fall, dass Sie und der Computer das gleiche Symbol wählen!
+					<br>
+					<br>Es wird der Text <strong>unentschieden</strong> ausgegeben, wenn der Spieler und der Computer gleichen Punktestand haben.
+				</p>
+
+				<p>Erstes Projekt mit: <a class="links" href="https://github.com/jkastner2006/Tetris"> GitHub (Users with permission)</a></p>
+				<p>Projektlaufzeit: ungefähr 1-2 Monat(e)</p>
+			</section>
 		</section>
 
-		<!-- Code -->
-		<section data-markdown>
-			<script type="text/template">
-				```php [1|3-5]
-				public function foo()
-				{
-				$foo = array(
-				'bar' => 'bar'
-				)
-				}
-				```
-			</script>
+
+		<section>
+
+			<section>
+				<h6>Minesweeper</h6>
+
+				<img src="./media/minesweeper1.png" alt="Minesweeper" width="600">
+
+
+			</section>
+			<section>
+				<h5>Projektbeschreibung: </h5>
+
+				<h5 class="definitions">Detailbeschreibung: </h5>
+				<p>Diese Version von Minesweeper wurde der Version von Microsoft, das bis ins Jahr 2007 in Windows-Betriebssystemen beigelegt war.
+					<br>Die selbst-programmierte Version beinhaltet, so wie das Originale, 3 Spielmodi (einfach, mittel, schwer).
+					<br>Auf der grafischen Ansicht sehen Sie eine Auswahlbox (Combobox), mit dieser können Sie die Spielmodi auswählen.
+					<br>Wenn Sie sich entschieden haben, klicken Sie auf den Button <code>Start</code>.
+					<br>
+					<br>Nun können Sie wie gewohnt das Spiel Minesweeper spielen:
+
+				</p>
+
+				<ul class="listLittle">
+					<li>mit der linken Maustaste decken Sie alle Felder auf</li>
+					<li>mit der rechten Maustaste können Sie Flaggen setzten bzw. entfernen oben rechts haben Sie einen Zähler, der zählt wie viel Flaggen Sie verwendet haben</li>
+				</ul>
+
+				<p>
+					<strong>Besonderheit:</strong>
+					Minesweeper-Button Klasse erstellt, um im Button alle nötigen Daten wie z.B. Koordinaten, hasBomb, hasFlag, ... speichern zu können
+					Optimierungen: Spielfeld generation in eigene Klasse ausgelagert. Code-Verdoppelung im Controller für Start-Methode bereinigt. (vorher für jede Spielfeldgröße eigene Schleife)
+
+					<br><strong>Beschreibungen bei Methoden:</strong>
+					Methoden sind alle nach Norm beschrieben. Beschreibung bei wichtigen/interessanten/schwierigen Stellen:
+					Zusätzlich finden Sie bei etwas schwierigeren Stellen bzw. programmtechnisch interessanten Stellen eine kurze Beschreibung in Form eines Einzeil-Kommentars.
+				</p>
+
+				<a class="links" href="https://github.com/jkastner2006/Minesweeper">GitHub Repository (only for Users with permission)</a>
+
+
+				<p>Dieses Projekt war ein Einzelprojekt</p>
+				<p>Projektlaufzeit: 11. Jänner 2024 bis 15. Februar 2024</p>
+
+			</section>
+
+
 		</section>
 
-		<!-- add optional line count offset, in this case 287 -->
-		<section data-markdown>
-			<script type="text/template">
-				## echo.c
+		<section>
+			<section>
+				<h6>Gruppenprojekt: Tetris</h6>
+				<img src="./media/Tetris.png" alt="Tetris" width="600">
+			</section>
+			<section>
+				<h5>Projektbeschreibung: </h5>
+				<p>Tetris ist ein klassisches Puzzle-Spiel, das in den 1980er Jahren entwickelt wurde und bis heute zu den bekanntesten Videospielen zählt.
+					Ziel des Spiels ist es, herunterfallende Blöcke (Tetrominos) in einer rechteckigen Spielfläche so zu platzieren, dass vollständige horizontale Linien entstehen, die dann entfernt werden.
+					Das Spiel endet, wenn sich die Blöcke bis zur oberen Grenze der Spielfläche stapeln.
+				</p>
 
-				```c [287: 2|4,6]
-				/* All of the options in this arg are valid, so handle them. */
-				p = arg + 1;
-				do {
-				if (*p == 'n')
-				nflag = 0;
-				if (*p == 'e')
-				eflag = '\\';
-				} while (*++p);
-				```
-				[source](https://git.busybox.net/busybox/tree/coreutils/echo.c?h=1_36_stable#n287)
-			</script>
+				<p>
+					In diesem Projekt wird eine eigene Version von Tetris entwickelt.
+					Ziel ist es, die grundlegenden Spielmechaniken zu implementieren und gegebenenfalls um zusätzliche Funktionen zu erweitern.
+				</p>
+
+				<a class="links" href="https://github.com/jkastner2006/Tetris">GitHub Repository (only for Users with permission)</a>
+
+				<p>Projektteam: Lukas Schlader, Simon Schmadlbauer, Jannick Kastner</p>
+				<p>Projektlaufzeit: </p>
+			</section>
 		</section>
 
-		<!-- Images -->
-		<section data-markdown>
-			<script type="text/template">
-				![Sample image](https://s3.amazonaws.com/static.slid.es/logo/v2/slides-symbol-512x512.png)
-			</script>
+		<section>
+			<section>
+				<h6>Quiz-App</h6>
+			</section>
+			<section>
+				<h5>Projektbeschreibung: </h5>
+			</section>
 		</section>
 
-		<!-- Math -->
-		<section data-markdown>
-			## The Lorenz Equations
-			`\[\begin{aligned}
-			\dot{x} &amp; = \sigma(y-x) \\
-			\dot{y} &amp; = \rho x - y - xz \\
-			\dot{z} &amp; = -\beta z + xy
-			\end{aligned} \]`
+		<section>
+			<section>
+				<h6>Snake</h6>
+			</section>
+			<section>
+				<h5>Projektbeschreibung: </h5>
+			</section>
 		</section>
+
+
+
+
+
+
 
 	</div>
 </div>
 
-<script src="../dist/reveal.js"></script>
-<script src="../plugin/markdown/markdown.js"></script>
-<script src="../plugin/highlight/highlight.js"></script>
-<script src="../plugin/notes/notes.js"></script>
-<script src="../plugin/math/math.js"></script>
-
+<script src="dist/reveal.js"></script>
+<script src="plugin/zoom/zoom.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/search/search.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
 <script>
 
+	// Also available as an ES module, see:
+	// https://revealjs.com/initialization/
 	Reveal.initialize({
 		controls: true,
 		progress: true,
-		history: true,
 		center: true,
+		hash: true,
 
-		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+		// Learn about plugins: https://revealjs.com/plugins/
+		plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
 	});
 
 </script>

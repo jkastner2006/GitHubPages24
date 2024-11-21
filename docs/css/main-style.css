@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Varela+Round&display=swap');
+
+.paragraph1{
+    font-size: 13pt;
+}
+
+p{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 12pt;
+    display: block;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+code {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: monospace;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 70%;
+}
+
+
+.definitions{
+    font-size: 15pt;
+}
+
+.list li{
+    font-size: 22pt;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.listLittle li{
+    font-size: 13pt;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.links{
+    font-family: 'Doto', sans-serif;
+    font-size: 13pt;
+}
+
+/*
+    CSS for Images:
+ */
+
+#imageSchereSteinPapier1, #imageSchereSteinPapier2, #imageSchereSteinPapier3 {
+    display: inline;
+    margin: 10px; /* Abstand zwischen den Bildern */
+    width:400px; /* Breite der Bilder */
+
+}
